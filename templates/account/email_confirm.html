@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Authentication{% endblock %}
+
+{% load i18n %}
+{% load account %}
+{% load allauth %}
+
+
+{% block content %}
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+        <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                Confirmation</h2>
+            {% if confirmation %}
+                {% user_display confirmation.email_address.user as user_display %}
+                {% if can_confirm %}
+                    <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Please confirm that
+                        <a href="mailto:{{ email }}">{{ email }}</a> is the email address
+                        of {{ user_display }}.</p>
+                    {% url 'account_confirm_email' confirmation.key as action_url %}
+                    <form method="post" action="{{ action_url }}">
+                        {% csrf_token %}
+                        {{ redirect_field }}
+                        <button type="submit"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                            Confirm
+                        </button>
+                    </form>
+                {% else %}
+                    <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Unable to
+                        confirm {{ email }} because this address is already confirmed by another
+                        account.</p>
+                {% endif %}
+            {% else %}
+                {% url 'account_email' as email_url %}
+                <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">The email confirmation
+                    link has expired or is invalid. Please <a href="{{ email_url }}">request a
+                        new confirmation</a>.</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

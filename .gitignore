@@ -1,0 +1,10 @@
+.venv
+media/
+static/
+node/
+__pycache__/
+.env
+.DS_Store
+mydatabase
+.dockerignore
+.idea

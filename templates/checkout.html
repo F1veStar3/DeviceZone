@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+
+    <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
+        <form action="{% url 'make_order' %}" method="POST" class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+        {% csrf_token %}
+            <ol class="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base">
+                <li class="after:border-1 flex items-center text-primary-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10">
+                    <span class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
+                         <svg class="me-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                              width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                         </svg>
+                        Cart
+                    </span>
+                </li>
+                <li class="after:border-1 flex items-center text-primary-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10">
+                    <span class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
+                        <svg class="me-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                        </svg>
+                        Checkout
+                    </span>
+                </li>
+                <li class="flex shrink-0 items-center">
+                    <svg class="me-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                    </svg>
+                    Order summary
+                </li>
+            </ol>
+            <div class="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-12 xl:gap-16">
+                <div class="min-w-0 flex-1 space-y-8">
+                    <div class="space-y-4">
+                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Delivery Details</h2>
+
+                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            <div>
+                                <label for="first_name"
+                                       class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"> First Name </label>
+                                <input type="text" id="first_name" name="first_name"
+                                       class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                                       placeholder="Bonnie" required/>
+                            </div>
+
+                            <div>
+                                <label for="last_name"
+                                       class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                                <input type="text" id="last_name" name="last_name"
+                                       class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                                       placeholder="Green" required/>
+                            </div>
+
+                            <div>
+                                <label for="phone"
+                                       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone
+                                    number:</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 19 18">
+                                            <path d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"/>
+                                        </svg>
+                                    </div>
+                                    <input type="text" id="phone" aria-describedby="helper-text-explanation" name="phone"
+                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                           placeholder="123-456-7890" required/>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="address" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                    Address </label>
+                                <input type="text" id="address" name="address"
+                                       class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                                       placeholder="Enter your address (Street, City, ZIP)" required/>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="comment" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                message</label>
+                            <textarea id="comment" rows="4" name="comment"
+                                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                      placeholder="Write your thoughts here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Payment</h3>
+
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800">
+                                <div class="flex items-start">
+                                    <div class="flex h-5 items-center">
+                                        <input id="online_payment" aria-describedby="credit-card-text" type="radio"
+                                               name="payment_method"  value="online_payment"
+                                               class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                                               checked/>
+                                    </div>
+                                    <div class="ms-4 text-sm">
+                                        <label for="online_payment"
+                                               class="font-medium leading-none text-gray-900 dark:text-white"> Online Payment
+                                             </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800">
+                                <div class="flex items-start">
+                                    <div class="flex h-5 items-center">
+                                        <input id="pay_on_delivery" aria-describedby="pay-on-delivery-text" type="radio"
+                                               name="payment_method" value="pay_on_delivery"
+                                               class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"/>
+                                    </div>
+
+                                    <div class="ms-4 text-sm">
+                                        <label for="pay_on_delivery"
+                                               class="font-medium leading-none text-gray-900 dark:text-white"> Payment
+                                            on delivery </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md">
+                    <div class="flow-root">
+
+                        <div class="-my-3 divide-y divide-gray-200 dark:divide-gray-800">
+                            {% for item in cart_items %}
+                            <dl class="flex items-center justify-between gap-4 py-3">
+                                <dt class="text-base font-normal text-gray-500 dark:text-gray-400">{{ item.product.name }}({{ item.quantity }}) - {{ item.color.name }}</dt>
+                                <dd class="text-base font-medium text-gray-900 dark:text-white">${{ item.final_price_by_product }}</dd>
+                            </dl>
+                            {% endfor %}
+                            <dl class="flex items-center justify-between gap-4 py-3">
+                                <dt class="text-base font-bold text-gray-900 dark:text-white">Total</dt>
+                                <dd class="text-base font-bold text-gray-900 dark:text-white">${{ cart.total_price }}</dd>
+                            </dl>
+                        </div>
+
+                    </div>
+
+                    <div class="space-y-3">
+                        <button type="submit" class="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4  focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Proceed to Payment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+{% endblock %}
+
+

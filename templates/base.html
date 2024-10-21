@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Buy the Latest Devices Online{% endblock %}</title>
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <!-- Meta Tags -->
+    <meta name="description"
+          content="Purchase the latest devices at affordable prices. High quality, fast shipping, and warranty on all products.">
+    <meta name="keywords" content="devices, electronics, shopping, online store, gadgets, smartphones, tablets">
+    <meta name="author" content="Your Name or Company Name">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Buy the Latest Devices Online">
+    <meta property="og:description" content="High-quality devices at great prices. Shop now!">
+    <meta property="og:image" content="URL_to_your_product_image.jpg">
+    <meta property="og:url" content="https://your_website.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Your Site">
+
+    <link rel="stylesheet" href="{% if debug %}{% static 'css/main.css' %}{% else %}{% static 'css/main.min.css' %}{% endif %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/flowbite.min.js' %}"></script>
+    <script src="{% static 'js/scrips.js' %}"></script>
+    <script src="{% static 'js/like.js' %}"></script>
+</head>
+
+
+<body>
+{% include 'includes/navbar.html' %}
+{% include 'includes/messages.html' %}
+
+{% block content %}
+{% endblock %}
+
+{% include 'includes/footer.html' %}
+</body>
+</html>

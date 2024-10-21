@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Authentication{% endblock %}
+
+{% block content %}
+    {% load i18n %}
+
+    <section class="bg-gray-50 dark:bg-gray-900 py-20">
+        <div class="flex justify-center">
+            <form method="post" action="{% url 'account_logout' %}">
+                {% csrf_token %}
+                <button type="submit" value="Logout"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Log out
+                </button>
+            </form>
+        </div>
+    </section>
+    
+{% endblock content %}
