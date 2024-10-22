@@ -8,3 +8,4 @@ __pycache__/
 mydatabase
 .dockerignore
 .idea
+images

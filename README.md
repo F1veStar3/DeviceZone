@@ -19,3 +19,20 @@ PostgreSQL,Redis
 
 ## Additional
 Docker/Docker Compose, CI/CD, Git, SOLID, REST/REST API, Stripe
+
+# Images: 
+
+### index 
+![index](images/index.png)
+### login 
+![login](images/login.png)
+### catalog 
+![catalog](images/catalog.png)
+### detail 
+![detail](images/detail.png)
+### cart 
+![cart](images/cart.png)
+### checkout 
+![checkout](images/checkout.png)
+### payment 
+![payment](images/payment.png)
