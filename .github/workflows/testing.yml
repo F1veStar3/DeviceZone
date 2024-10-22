@@ -15,6 +15,9 @@ jobs:
       RENDER_EXTERNAL_HOSTNAME: localhost
       GOOGLE_CLIENT_ID: 1
       GOOGLE_SECRET: 1
+      STRIPE_WEBHOOK_SECRET: STRIPE_WEBHOOK_SECRET
+      STRIPE_TEST_SECRET_KEY: STRIPE_TEST_SECRET_KEY
+      REDIRECT_DOMAIN: localhost
 
     steps:
       - uses: actions/checkout@v4

@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from .models import Cart, Order, Color, CartItem, Product, Brand,Category
+from .models import Cart, Order
 
 class BasicViewsTest(TestCase):
     def setUp(self):
