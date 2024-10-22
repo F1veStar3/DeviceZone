@@ -3,9 +3,9 @@ from .models import Cart, Customer, Product, Category, Brand
 
 def get_common_context():
     return {
-        'products': Product.objects.select_related('category', 'brand').defer('description'),
-        'categories': Category.objects.all(),
-        'brands': Brand.objects.all(),
+        'products': Product.objects.filter(is_available=True).select_related('category', 'brand').defer('description'),
+        'categories': Category.objects.filter(is_available=True),
+        'brands': Brand.objects.filter(is_available=True),
     }
 
 class CommonContextMixin:

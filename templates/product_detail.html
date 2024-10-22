@@ -13,17 +13,17 @@
                                  class="absolute block w-full object-cover h-full top-0 left-0"
                                  alt="{{ product.alt_text }}">
                         </div>
-                        {% if product.additional_img %}
-                            {% for image in images %}
+                        {% if additional_img %}
+                            {% for image in additional_img %}
                                 <div class="hidden duration-200 ease-linear" data-carousel-item>
-                                    <img src="{{ image.additional_img.url }}"
+                                    <img src="{{ image.url }}"
                                          class="absolute block w-full object-cover h-full top-0 left-0"
                                          alt="{{ image.alt_text }}">
                                 </div>
                             {% endfor %}
                         {% endif %}
                     </div>
-                    {% if product.additional_img %}
+                    {% if additional_img %}
                         <button type="button"
                                 class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                                 data-carousel-prev>
