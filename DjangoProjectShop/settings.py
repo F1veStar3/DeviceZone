@@ -127,6 +127,7 @@ else:
     CELERY_RESULT_EXTENDED = True
 
 
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -209,3 +210,4 @@ SOCIALACCOUNT_PROVIDERS = {
 STRIPE_WEBHOOK_SECRET = env('STRIPE_WEBHOOK_SECRET')
 STRIPE_TEST_SECRET_KEY = env('STRIPE_TEST_SECRET_KEY')
 REDIRECT_DOMAIN = env('REDIRECT_DOMAIN')
+
