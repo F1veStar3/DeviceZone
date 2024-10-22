@@ -14,7 +14,7 @@ import stripe
 
 from .mixins import CommonContextMixin,get_common_context,CartMixin
 from .form import OrderForm
-from .models import Product, Banner,Color, CartItem, Promo
+from .models import Product, Banner,Color, CartItem, Promo, ProductAttribute
 
 from .tasks import process_stripe_event
 
@@ -116,8 +116,9 @@ class ProductDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         product = self.object
+        product_attributes = ProductAttribute.objects.filter(product=product)
 
-        context['images'] = product.productattribute_set.select_related('color').all()
+        context['additional_img'] = [attr.additional_img for attr in product_attributes if attr.additional_img]
         context['colors'] = Color.objects.filter(productattribute__product=product).distinct()
 
         return context
