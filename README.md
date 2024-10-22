@@ -6,7 +6,6 @@
 
 ```docker exec -it my-app-container python manage.py createsuperuser```
 
-#################################################################
 # Steck: 
 
 ## Front-end
