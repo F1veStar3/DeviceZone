@@ -6,7 +6,7 @@
 
 ```docker exec -it my-app-container python manage.py createsuperuser```
 
-# Steck: 
+# Stack: 
 
 ## Front-end
 JavaScript, JQuery, CSS, HTML, NPM, tailwindcss, flowbite
@@ -18,7 +18,7 @@ Python, Django, Celery, Flower, Allauth, Debug Toolbar, Django Compressor, Pytes
 PostgreSQL,Redis
 
 ## Additional
-Docker/Docker Compose, CI/CD, Git, SOLID, REST/REST API, Stripe
+Docker/Docker Compose, Git Actions, Stripe
 
 # Images: 
 
