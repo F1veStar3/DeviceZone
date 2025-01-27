@@ -18,7 +18,7 @@ Python, Django, Celery, Flower, Allauth, Debug Toolbar, Django Compressor, Pytes
 PostgreSQL,Redis
 
 ## Additional
-Docker/Docker Compose, Git Actions, Stripe
+Docker/Docker Compose, GitHub Actions, Stripe
 
 # Images: 
 
