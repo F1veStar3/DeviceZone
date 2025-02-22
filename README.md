@@ -1,26 +1,43 @@
-# Commands:
+# DeviceZone E-Commerce Store
 
-```git clone git@github.com:F1veStar3/django-ecommerce.git```
+This is an online store for purchasing computer devices. It offers a modern UI and seamless payment integration with Stripe.
 
-```docker compose up --build -d```
+## Installation and Setup
 
-```docker exec -it my-app-container python manage.py createsuperuser```
+### Prerequisites
+Ensure you have Docker and Docker Compose installed.
 
-# Stack: 
+### Running the Project
 
-## Front-end
-JavaScript, JQuery, CSS, HTML, NPM, tailwindcss, flowbite
+1. Clone the repository:
 
-## Back-end
-Python, Django, Celery, Flower, Allauth, Debug Toolbar, Django Compressor, Pytest
+```sh
+git clone <repository-url>
+cd DjangoProjectShop
+```
 
-## DataBases
-PostgreSQL,Redis
+2. Build and start the containers:
 
-## Additional
-Docker/Docker Compose, GitHub Actions, Stripe
+```sh
+docker compose up --build -d
+```
 
-# Images: 
+3. Create a superuser for the admin panel:
+
+```sh
+docker exec -it my-app-container python manage.py createsuperuser
+```
+
+4. Open your browser and go to `http://127.0.0.1:8000/` to access the store.
+
+## Technology Stack
+
+- **Frontend:** TailwindCSS, HTML, jQuery
+- **Backend:** Python, Django, Celery, Pytest
+- **DevOps:** Docker/Docker Compose, GitHub Actions
+- **Payments:** Stripe
+
+## Images: 
 
 ### index 
 ![index](images/index.png)
