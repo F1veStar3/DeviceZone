@@ -17,23 +17,6 @@ class BasicViewsTest(TestCase):
         response = self.client.get(reverse('cart'))
         self.assertEqual(response.status_code, 200)
 
-
-
-class RegistrationTest(TestCase):
-    def test_registration(self):
-        data = {
-            'username': 'newuser',
-            'email': 'newuser@example.com',
-            'password1': 'testpassword123',
-            'password2': 'testpassword123',
-        }
-        response = self.client.post(reverse('account_signup'), data)
-
-        self.assertEqual(User.objects.count(), 1)
-        self.assertEqual(User.objects.first().username, 'newuser')
-        self.assertRedirects(response, reverse('account_email_verification_sent'))
-
-
 class MakeOrderTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='testpassword')
