@@ -17,6 +17,7 @@ class BasicViewsTest(TestCase):
         response = self.client.get(reverse('cart'))
         self.assertEqual(response.status_code, 200)
 
+
 class MakeOrderTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='testpassword')
