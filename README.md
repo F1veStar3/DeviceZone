@@ -32,9 +32,9 @@ docker exec -it my-app-container python manage.py createsuperuser
 
 ## Technology Stack
 
-- **Frontend:** TailwindCSS, HTML, jQuery
+- **Frontend:** jQuery, TailwindCSS, HTML
 - **Backend:** Python, Django, Celery, Pytest
-- **DevOps:** Docker/Docker Compose, GitHub Actions
+- **CICD:** Docker/Docker Compose, GitHub Actions
 - **Payments:** Stripe
 
 ## Images: 
